@@ -14,6 +14,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Basic route that sends the user first to the AJAX Page
+app.use(express.static(__dirname + '/public'));
+
 app.get("/", function(req, res) {
   // res.send("Welcome to the Star Wars Page!")
   res.sendFile(path.join(__dirname, "public/index.html"));
